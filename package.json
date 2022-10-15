@@ -1,0 +1,12 @@
+{
+  "name": "cscc-gamedev-uploader",
+  "version": "1.0.0",
+  "description": "Itch.io Butler team-game upload tool",
+  "license": "MIT",
+  "author": {
+    "name": "Tom @ CSCC",
+    "email": "tallenbaugh@cscc.edu"
+  },
+  "dependencies": {
+  }
+}
