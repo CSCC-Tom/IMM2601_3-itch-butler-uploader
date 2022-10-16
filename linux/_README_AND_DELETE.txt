@@ -2,20 +2,13 @@ This file exists because empty folders tend to not come through properly in zips
 
 This file is just a final reminder of what files should go in this folder. YOU SHOULD NOT SHIP THIS WITH YOUR GAME.
 
-THIS FOLDER IS: win
+THIS FOLDER IS: linux
 
 OPTIONAL OR REQUIRED? REQUIRED
 
-BUILD TYPE IN UNITY: Intel 64-bit Windows
+BUILD TYPE IN UNITY: x86_64
 
 MINIMUM EXPECTED FOLDER CONTENTS:
 - YOUR-GAME_Data folder
 - YOUR-GAME.exe
-- MonoBleedingEdge folder
-- UnityCrashHandler64.exe
-- UnityPlayer.dll
-
-- - - linux (REQUIRED, x86_64)
-- - - - YOUR-GAME_Data
-- - - - YOUR-GAME.exe
-- - - - UnityPlayer.so 
+- UnityPlayer.so 
