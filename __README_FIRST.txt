@@ -1,4 +1,4 @@
-THIS IS - - - - - - - 
+THIS IS - - - - - - -
 CSCC Butler Tool, specially formulated for your team's game!
 It can update your game on Itch.io and automatically sets the version number.
 You should already be an Admin on your team's Itch page if you are reading this!
@@ -6,15 +6,13 @@ You are probably your team's build manager. Thanks for the help!
 
 INSTALLATION - - - - - - -
 - In order to use this tool, you will need to install the following things:
-- - Itch.io Desktop App, which will also install `butler`, 
-- - - https://itch.io/app
-- - Node.js LTS (Recommended), Version 16, 
+- - Node.js LTS (Recommended), Version 16,
 - - - https://nodejs.org/en/
 
 Once itch.io App and Node.js are installed, you will:
 
-CONFIRM SETUP - - - - - - - 
-- Just to make sure everything's set up right. 
+CONFIRM SETUP - - - - - - -
+- Just to make sure everything's set up right.
 - - run 1-check-dependencies.bat
 - - - This should print out your Itch and Node version numbers.
 - - - If it does not work right, consider restarting your computer or reinstalling the tools.
@@ -48,7 +46,7 @@ PREPARE YOUR BUILDS - - - - - - -
 - - - linux (REQUIRED, x86_64)
 - - - - YOUR-GAME_Data
 - - - - YOUR-GAME.exe
-- - - - UnityPlayer.so 
+- - - - UnityPlayer.so
 - - - mac (REQUIRED, intel 64-bit + apple silicon Mac)
 - - - - mac.app
 - - - - - Contents
