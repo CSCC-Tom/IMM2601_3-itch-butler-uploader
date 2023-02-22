@@ -9,6 +9,9 @@ INSTALLATION - - - - - - -
 - - Node.js LTS (Recommended), Version 16,
 - - - https://nodejs.org/en/
 
+For all of the following steps, you should 
+  use the win- or mac- version of the script listed, based on what computer you have.
+
 Once itch.io App and Node.js are installed, you will:
 
 CONFIRM SETUP - - - - - - -

@@ -3,18 +3,24 @@
 var path = require('path');
 var execFile = require('child_process').execFile;
 
-// NodeJS application that 
+// NodeJS application that
 // butler push mygame user/mygame:win32 --userversion 1.1.0(-final)
 // See README for version number construction details
 
 // EXAMPLE projectstart = new Date(2022, 8, 28, 13, 0, 0, 0).valueOf();
 // This would be 2022 September 28, 1:00:00.000 PM
-const projectstart = new Date(2022, 8, 28, 13, 0, 0, 0).valueOf();
+
+
+const projectstart = new Date(2023, 0, 18, 13, 0, 0, 0).valueOf();
 // How many full weeks will the project last? Puts '-final' on the version number after that point.
-const projectweeks = 4;
+const projectweeks = 15;
 
 const username = 'cscc-mini-projects';
-const gamename = 'secret-test-project';
+
+// ATTENTION BUILD MANAGER: YOU MAY NEED TO MODIFY THESE LINES FOR YOUR GAME
+// ESPECIALLY IF YOU CHANGE THE GAME URL ON itch.io
+const gamename = '2023sp-game-4';
+// END OF ATTENTION BLOCK
 
 function CurrentVersionString() {
     const now = Date.now();
