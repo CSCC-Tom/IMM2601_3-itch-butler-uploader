@@ -104,3 +104,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+.vs/
+
+# butler-uploader upload folders
+# NOTE: This section needs to be added AFTER adding the overall tool and remainder of this gitignore
+linux/
+mac/
+win/
+win32/
