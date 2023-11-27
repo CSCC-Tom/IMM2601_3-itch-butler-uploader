@@ -1,5 +1,6 @@
 THIS IS - - - - - - -
 CSCC Butler Tool, specially formulated for your team's game!
+There are `mac-` and `win-` variant scripts to use.
 It can update your game on Itch.io and automatically sets the version number.
 You should already be an Admin on your team's Itch page if you are reading this!
 You are probably your team's build manager. Thanks for the help!
@@ -13,6 +14,10 @@ For all of the following steps, you should
   use the win- or mac- version of the script listed, based on what computer you have.
 
 Once itch.io App and Node.js are installed, you will:
+
+RUNNING FILES - - - WINDOWS / MAC - - - 
+- If you are on a Windows, you can simply double-click on the corresponding win-.bat batch files
+- If you are on Mac, open a terminal shell and point it at the folder this README is in. Then call `sh mac-1-check-dependencies` etc. for each step.
 
 CONFIRM SETUP - - - - - - -
 - Just to make sure everything's set up right.
@@ -59,6 +64,8 @@ PREPARE YOUR BUILDS - - - - - - -
 - - - - - - MonoBleedingEdge
 - - - - - - Resources
 - - - - - - Info.plist
+- - - web (Different class / setup)
+- - - - No need to worry about this one.
 
 FINALLY - - - - - - -
 - Run `3-upload.bat` if you are providing win32, and `3-upload-no-win32.bat` otherwise.
