@@ -1,2 +1,2 @@
-call .\butler\versions\15.21.0\butler.exe logout
+call .\butler\versions\15.24.0\win\butler.exe logout
 pause

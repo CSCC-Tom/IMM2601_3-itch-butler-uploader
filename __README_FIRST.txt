@@ -1,4 +1,4 @@
-THIS IS - - - - - - -
+THIS IS - - - - - - - 
 CSCC Butler Tool, specially formulated for your team's game!
 There are `mac-` and `win-` variant scripts to use.
 It can update your game on Itch.io and automatically sets the version number.
@@ -6,21 +6,28 @@ You should already be an Admin on your team's Itch page if you are reading this!
 You are probably your team's build manager. Thanks for the help!
 
 INSTALLATION - - - - - - -
-- In order to use this tool, you will need to install the following things:
-- - Node.js LTS (Recommended), Version 16,
-- - - https://nodejs.org/en/
+- In order to use this tool, you will need to install the following:
+- - Node.js LTS (Recommended, latest is 22), https://nodejs.org/en/
+- - - If you're a programmer, or you have other reasons to expect to ever use NodeJS again in your life, it is recommended to install node via Node Version Manager (https://github.com/nvm-sh/nvm) or something similar, to avoid very annoying uninstall process that forces you to go deep in your computer's filesystem to fully get rid of directly-installed Node versions.
 
-For all of the following steps, you should 
-  use the win- or mac- version of the script listed, based on what computer you have.
+RECOMMENDATION - - - - - -
+- Itch.io Desktop App allows your team to get automatic patch updates of your game whenever you push builds, 
+- - https://itch.io/app
 
-Once itch.io App and Node.js are installed, you will:
+CREATE FOLDERS - - - - - -
+- Git won't let empty folders be shared over repos. You will need to create the following folders, with exactly these names, inside this butler-uploader folder. (They should be alongside the butler folder)
+- - linux
+- - mac
+- - win 
+- - win32
 
 RUNNING FILES - - - WINDOWS / MAC - - - 
+### For all of the following steps, you should use the win- or mac- version of the script listed, based on what computer you have.
 - If you are on a Windows, you can simply double-click on the corresponding win-.bat batch files
-- If you are on Mac, open a terminal shell and point it at the folder this README is in. Then call `sh mac-1-check-dependencies` etc. for each step.
+- If you are on Mac, open a terminal shell (command line) and point it at the folder this README is in. Then call `sh mac-1-check-dependencies` etc. for each step.
 
-CONFIRM SETUP - - - - - - -
-- Just to make sure everything's set up right.
+CONFIRM SETUP - - - - - - - 
+- Just to make sure everything's set up right...
 - - run 1-check-dependencies.bat
 - - - This should print out your Itch and Node version numbers.
 - - - If it does not work right, consider restarting your computer or reinstalling the tools.
@@ -54,7 +61,7 @@ PREPARE YOUR BUILDS - - - - - - -
 - - - linux (REQUIRED, x86_64)
 - - - - YOUR-GAME_Data
 - - - - YOUR-GAME.exe
-- - - - UnityPlayer.so
+- - - - UnityPlayer.so 
 - - - mac (REQUIRED, intel 64-bit + apple silicon Mac)
 - - - - mac.app
 - - - - - Contents

@@ -10,15 +10,18 @@ var execFile = require("child_process").execFile;
 // EXAMPLE projectstart = new Date(2022, 8, 28, 13, 0, 0, 0).valueOf();
 // This would be 2022 September 28, 1:00:00.000 PM
 
-const projectstart = new Date(2023, 0, 18, 13, 0, 0, 0).valueOf();
+// DAYLIGHT SAVINGS TIME adjustment. Noon = 1:00 after the time change.
+const projectstart = new Date(2025, 0, 15, 12, 0, 0, 0).valueOf();
 // How many full weeks will the project last? Puts '-final' on the version number after that point.
 const projectweeks = 15;
 
-const username = "cscc-mini-projects";
+const username = "cscc-game-projects";
 
 // ATTENTION BUILD MANAGER: YOU MAY NEED TO MODIFY THESE LINES FOR YOUR GAME
 // ESPECIALLY IF YOU CHANGE THE GAME URL ON itch.io
-const gamename = "2023sp-game-4";
+const gamename = "2025sp-dj-dungeoness";
+// This one needs changed if you aren't on Windows...
+const butler_command_file = "./butler/versions/15.24.0/win/butler.exe";
 // END OF ATTENTION BLOCK
 
 function CurrentVersionString() {
@@ -47,7 +50,6 @@ function CurrentVersionString() {
 }
 
 function UploadTeamGame(platform, version_string, cb) {
-  const butler_command_file = "./butler/versions/15.21.0/butler.exe";
   var exePath = path.resolve(__dirname, butler_command_file);
   const butler_command_args = [
     "push",
@@ -56,7 +58,7 @@ function UploadTeamGame(platform, version_string, cb) {
     `--userversion`,
     version_string,
   ];
-  //const butler_command = `/butler/versions/15.21.0/butler.exe push ${platform} ${username}/${gamename}:${platform} --userversion ${version_string}`;
+  //const butler_command = `/butler/versions/15.24.0/win/butler.exe push ${platform} ${username}/${gamename}:${platform} --userversion ${version_string}`;
   console.log(`RUNNING ${exePath} ${JSON.stringify(butler_command_args)}`);
   execFile(exePath, butler_command_args, (error, stdout, stderr) => {
     if (error) {

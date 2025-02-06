@@ -2,7 +2,7 @@
 
 Helper utility application for CSCC Game Development Capstone course uploads to Itch.io (but could be easily tweaked for anyone else)
 
-NOTE: This is currently Windows-only. At such time other platform "batch-file-like" scripts are added, the core 1-3 .bat files should be moved to a platform-specific folder, and the `__README_FIRST` updated.
+NOTE: This is legacy instructions, kept for extra context. For more direct useful info, see the `__README_FIRST` updated.
 
 This project currently has no dependencies other than Node itself. Planned to stay that way.
 

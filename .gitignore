@@ -114,3 +114,7 @@ mac/
 win/
 win32/
 web/
+
+!butler/versions/15.24.0/linux
+!butler/versions/15.24.0/mac
+!butler/versions/15.24.0/win

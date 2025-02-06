@@ -1,1 +1,1 @@
-./butler/versions/15.21.0/butler logout
+call ./butler/versions/15.24.0/mac/butler logout

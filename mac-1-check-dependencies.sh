@@ -1,2 +1,2 @@
-./butler/versions/15.21.0/butler -V
+.\butler\versions\15.24.0\mac\butler -V
 node -v
