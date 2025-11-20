@@ -13,15 +13,17 @@ var execFile = require("child_process").execFile;
 // This would be 2022 September 28, 1:00:00.000 PM
 
 // DAYLIGHT SAVINGS TIME adjustment. Noon = 1:00 after the time change.
-const projectstart = new Date(2023, 8, 11, 11, 0, 0, 0).valueOf();
+const projectstart = new Date(2025, 9, 29, 13, 0, 0, 0).valueOf();
 // How many full weeks will the project last? Puts '-final' on the version number after that point.
-const projectweeks = 13;
+const projectweeks = 6;
 
 const username = "cscc-mini-projects";
 
 // ATTENTION BUILD MANAGER: YOU MAY NEED TO MODIFY THESE LINES FOR YOUR GAME
 // ESPECIALLY IF YOU CHANGE THE GAME URL ON itch.io
-const gamename = "2023au-2541-t1-vamp-savior";
+const gamename = "2025au-m3-you-cant-park-there";
+// If you're on Linux, you may need to change this...
+const butler_command_file = "./butler/versions/15.24.0/mac/butler";
 // END OF ATTENTION BLOCK
 
 function CurrentVersionString() {
@@ -50,7 +52,6 @@ function CurrentVersionString() {
 }
 
 function UploadTeamGame(platform, version_string, cb) {
-  const butler_command_file = "./butler/versions/15.21.0/butler";
   var exePath = path.resolve(__dirname, butler_command_file);
   const butler_command_args = [
     "push",
