@@ -112,7 +112,6 @@ dist
 linux/
 mac/
 win/
-win32/
 web/
 
 !butler/versions/15.24.0/linux

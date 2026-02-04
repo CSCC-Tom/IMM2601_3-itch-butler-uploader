@@ -7,8 +7,10 @@ You are probably your team's build manager. Thanks for the help!
 
 INSTALLATION - - - - - - -
 - In order to use this tool, you will need to install the following:
-- - Node.js LTS (Recommended, latest is 22), https://nodejs.org/en/
-- - - If you're a programmer, or you have other reasons to expect to ever use NodeJS again in your life, it is recommended to install node via Node Version Manager (https://github.com/nvm-sh/nvm) or something similar, to avoid very annoying uninstall process that forces you to go deep in your computer's filesystem to fully get rid of directly-installed Node versions.
+- - Node.js LTS (latest is 24), https://nodejs.org/en/
+- - - HIGHLY RECOMMENDED: Instead of installing Node directly, which is a pain to "fully uninstall", you should use one of these indirect solutions which will lead to a cleaner experience with upgrading or uninstalling Node.
+- - - - Node Version Manager (https://github.com/nvm-sh/nvm) | This is the one I personally use. WINDOWS-ONLY NOTE: nvm-windows is what you want. (https://github.com/coreybutler/nvm-windows)
+- - - - Node Version Switcher (https://github.com/jasongin/nvs) | This is newer, and also has VS Code support (https://github.com/jasongin/nvs?tab=readme-ov-file#vs-code-support) if you prefer using the built-in terminal of VS Code. 
 
 RECOMMENDATION - - - - - -
 - Itch.io Desktop App allows your team to get automatic patch updates of your game whenever you push builds, 
@@ -19,7 +21,6 @@ CREATE FOLDERS - - - - - -
 - - linux
 - - mac
 - - win 
-- - win32
 
 RUNNING FILES - - - WINDOWS / MAC - - - 
 ### For all of the following steps, you should use the win- or mac- version of the script listed, based on what computer you have.
@@ -46,12 +47,6 @@ PREPARE YOUR BUILDS - - - - - - -
 - - Make sure the folders contain ONLY the files you want the public to have access to.
 - - You can include more files than the base files, for example a README or credits file.
 - Following is the MINIMUM structure you should have in the butler-tool folders, here for reference.
-- - - win32 (optional, Intel 32-bit Windows)
-- - - - YOUR-GAME_Data
-- - - - YOUR-GAME.exe
-- - - - MonoBleedingEdge
-- - - - UnityCrashHandler32.exe
-- - - - UnityPlayer.dll
 - - - win (REQUIRED, Intel 64-bit Windows)
 - - - - YOUR-GAME_Data
 - - - - YOUR-GAME.exe
@@ -75,7 +70,7 @@ PREPARE YOUR BUILDS - - - - - - -
 - - - - No need to worry about this one.
 
 FINALLY - - - - - - -
-- Run `3-upload.bat` if you are providing win32, and `3-upload-no-win32.bat` otherwise.
+- Run `3-upload.bat`
 - - - This process has already been configured for your team and project
 - - - It will automatically put an appropriate version number on your project
 - - - 1.x.y, where

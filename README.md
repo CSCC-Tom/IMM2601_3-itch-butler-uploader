@@ -14,7 +14,7 @@ This tool provides easy local folders to prep and upload versioned game updates 
 
 The default behavior is to generate version numbers around the full weeks, days, and time information since the beginning of the project. For example, a version 1.2.50734 had its upload initiated 2 weeks, 5 days, 7 hours and 34 minutes since the 'official start time' of the project. On the "last week" and beyond, the version will look like 1.xx.yyyyy-final.
 
-Minimum required uploaded versions are `linux`, `mac`, and `win`. `win32` is an optional folder with its own separate kickoff script.
+Minimum required uploaded versions are `linux`, `mac`, and `win`.
 
 These requirements are class-driven, feel free to use this code as a starting point for your own project and rework the logic to your own liking.
 
@@ -24,7 +24,7 @@ There are hard-coded values near the top of `butler-uploader.js` that you can mo
 
 Then, for each team, the username and gamename should be set accordingly.
 
-These Itch.io resources should have already been made, and the username set to an Itch Page Admin with a verified email.
+These Itch.io resources should have already been made, and the username set to an Itch Page Admin with a verified email. (If you have not verified your account email on Itch, the upload scripts will fail.)
 
 ## Group Coordinator Usage
 
