@@ -11,20 +11,19 @@ var execFile = require("child_process").execFile;
 // This would be 2022 September 28, 1:00:00.000 PM
 
 // DAYLIGHT SAVINGS TIME adjustment. Noon = 1:00 after the time change.
-const projectstart = new Date(2026, 0, 21, 0, 0, 0, 0).valueOf();
+const projectstart = new Date(2026, 9, 28, 0, 0, 0, 0).valueOf();
 /** How many weeks for prototyping? Appends '-proto' on the version number until that point. */
-const planningweeks = 2;
+const planningweeks = 1;
 /** How many weeks for production? Appends '-alpha' on the version number until that point. */
-const productionweeks = 12;
+const productionweeks = 4;
 /** How many weeks for polish? Appends '-beta' on the version number until that point, '-final' afterward. */
-const polishweeks = 2;
+const polishweeks = 1;
 
-const username = "cscc-game-projects";
+const username = "cscc-mini-projects";
 
 // ATTENTION BUILD MANAGER: YOU MAY NEED TO MODIFY THESE LINES FOR YOUR GAME
 // ESPECIALLY IF YOU CHANGE THE GAME URL ON itch.io
 const gamename = "game-url-stub-goes-here";
-const butler_command_file = "./butler/versions/15.32.0/win/butler.exe";
 // END OF ATTENTION BLOCK
 
 function CurrentVersionString() {
@@ -56,12 +55,18 @@ function CurrentVersionString() {
   return base_string + "-final";
 }
 
-function UploadTeamGame(platform, version_string, cb) {
+function UploadTeamGame(
+  uploading_platform,
+  target_platform,
+  version_string,
+  cb,
+) {
+  const butler_command_file = `./butler/versions/15.32.0/${uploading_platform}/butler.exe`;
   var exePath = path.resolve(__dirname, butler_command_file);
   const butler_command_args = [
     "push",
-    platform,
-    `${username}/${gamename}:${platform}`,
+    target_platform,
+    `${username}/${gamename}:${target_platform}`,
     `--userversion`,
     version_string,
   ];
@@ -81,20 +86,22 @@ function UploadTeamGame(platform, version_string, cb) {
       `stderr (included for information only; run was successful): ${stderr}`,
     );
     console.log(`FINISHED ${JSON.stringify(butler_command_args)}\n\n`);
-    cb(version_string);
+    cb(uploading_platform, version_string);
   });
 }
-function AllDone(version_string) {
-  console.log(`\nWoo! All done uploading ${version_string}!`);
+function AllDone(uploading_platform, version_string) {
+  console.log(
+    `\nWoo! All done uploading ${gamename} version ${version_string} from your ${uploading_platform} machine!`,
+  );
 }
-function ButlerUploadLinux(version_string) {
-  UploadTeamGame("linux", version_string, AllDone);
+function ButlerUploadLinux(uploading_platform, version_string) {
+  UploadTeamGame(uploading_platform, "linux", version_string, AllDone);
 }
-function ButlerUploadMac(version_string) {
-  UploadTeamGame("mac", version_string, ButlerUploadLinux);
+function ButlerUploadMac(uploading_platform, version_string) {
+  UploadTeamGame(uploading_platform, "mac", version_string, ButlerUploadLinux);
 }
-function ButlerUploadWin(version_string) {
-  UploadTeamGame("win", version_string, ButlerUploadMac);
+function ButlerUploadWin(uploading_platform, version_string) {
+  UploadTeamGame(uploading_platform, "win", version_string, ButlerUploadMac);
 }
 /* REMOVED IN 1.4.0 -- win32 function ButlerUploadWin32(version_string) {
   UploadTeamGame("win32", version_string, ButlerUploadWin);
@@ -108,13 +115,30 @@ function RunButlerUploader() {
   const now_date = new Date(Date.now());
   const proj_date = new Date(projectstart);
   const version_string = CurrentVersionString();
+
+  if (process.argv.length < 3) {
+    console.error("uploading_platform must be passed in to RunButlerUploader.");
+    return;
+  }
+  if (
+    process.argv[2] !== "win" &&
+    process.argv[2] !== "linux" &&
+    process.argv[2] !== "mac"
+  ) {
+    console.error(
+      "uploading_platform must be win, linux or mac. Saw " + process.argv[2],
+    );
+    return;
+  }
+
   console.log("\nCalculating version number...");
   console.log(`now = ${now_date.toDateString()} @ ${now_date.toTimeString()}`);
   console.log(
     `project start = ${proj_date.toDateString()} @ ${proj_date.toTimeString()}`,
   );
   console.log("So, version number is " + version_string);
-  ButlerUploadWin(version_string);
+
+  ButlerUploadWin(process.argv[2], version_string);
 
   /* REMOVED IN 1.4.0 -- win32 const args = process.argv;
   // Restore this if passing additional arguments from the bat / sh side.

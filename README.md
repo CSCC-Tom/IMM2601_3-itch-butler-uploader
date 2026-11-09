@@ -2,7 +2,7 @@
 
 Helper utility application for CSCC Game Development Capstone course uploads to Itch.io (but could be easily tweaked for anyone else)
 
-NOTE: This is legacy instructions, kept for extra context. For more direct useful info, see the `__README_FIRST` updated.
+NOTE: This is legacy instructions, kept for extra context. For more direct useful info, see the `__README_FIRST.txt` file in the `_RUN_THE_TOOL_HERE` folder
 
 This project currently has no dependencies other than Node itself. Planned to stay that way.
 
