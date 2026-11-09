@@ -24,7 +24,7 @@ const username = "cscc-game-projects";
 // ATTENTION BUILD MANAGER: YOU MAY NEED TO MODIFY THESE LINES FOR YOUR GAME
 // ESPECIALLY IF YOU CHANGE THE GAME URL ON itch.io
 const gamename = "game-url-stub-goes-here";
-const butler_command_file = "./butler/versions/15.24.0/win/butler.exe";
+const butler_command_file = "./butler/versions/15.32.0/win/butler.exe";
 // END OF ATTENTION BLOCK
 
 function CurrentVersionString() {
@@ -65,7 +65,7 @@ function UploadTeamGame(platform, version_string, cb) {
     `--userversion`,
     version_string,
   ];
-  //const butler_command = `/butler/versions/15.24.0/win/butler.exe push ${platform} ${username}/${gamename}:${platform} --userversion ${version_string}`;
+  //const butler_command = `/butler/versions/15.32.0/win/butler.exe push ${platform} ${username}/${gamename}:${platform} --userversion ${version_string}`;
   console.log(`RUNNING ${exePath} ${JSON.stringify(butler_command_args)}`);
   execFile(exePath, butler_command_args, (error, stdout, stderr) => {
     if (error) {
